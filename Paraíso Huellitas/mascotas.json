@@ -1,0 +1,307 @@
+{
+ "organizacion": {
+  "nombre": "Paraíso Huellas",
+  "lema": "Rescate Animal",
+  "telefono": "0982382415",
+  "email": "paraisoanimalec@outlook.com",
+  "logo": "img/logo.webp"
+ },
+ "mascotas": [
+  {
+   "id": "zuko",
+   "nombre": "Zuko",
+   "especie": "perro",
+   "sexo": "macho",
+   "tamano": "grande",
+   "edad": 6,
+   "esterilizado": true,
+   "vacunas": true,
+   "lineas": [
+    "Soy Zuko, un macho de tamaño grande",
+    "y unos 6 años. Soy juguetón, amoroso y",
+    "disfruto de los paseos tranquilos. Estoy",
+    "esterilizado y tengo mis vacunas al día.",
+    "¡Caminemos sin prisa y llenemos",
+    "nuestros días de cariño!"
+   ],
+   "texto": "Soy Zuko, un macho de tamaño grande y unos 6 años. Soy juguetón, amoroso y disfruto de los paseos tranquilos. Estoy esterilizado y tengo mis vacunas al día. ¡Caminemos sin prisa y llenemos nuestros días de cariño!",
+   "foto": {
+    "src": "img/mascotas/zuko.webp",
+    "left": 28.559,
+    "top": 26.568,
+    "width": 42.87,
+    "height": 46.148
+   },
+   "pagina": 1
+  },
+  {
+   "id": "paquita",
+   "nombre": "Paquita",
+   "especie": "perro",
+   "sexo": "hembra",
+   "tamano": "grande",
+   "edad": 6,
+   "esterilizado": true,
+   "vacunas": true,
+   "lineas": [
+    "Soy Paquita, una perrita grande de unos",
+    "6 años. Soy activa, inteligente y muy",
+    "amorosa; me encantan los paseos.",
+    "Estoy esterilizada y tengo mis vacunas",
+    "al día. ¡Compartamos paseos, aventuras",
+    "y mucho cariño!"
+   ],
+   "texto": "Soy Paquita, una perrita grande de unos 6 años. Soy activa, inteligente y muy amorosa; me encantan los paseos. Estoy esterilizada y tengo mis vacunas al día. ¡Compartamos paseos, aventuras y mucho cariño!",
+   "foto": {
+    "src": "img/mascotas/paquita.webp",
+    "left": 27.983,
+    "top": 26.568,
+    "width": 44.074,
+    "height": 46.148
+   },
+   "pagina": 2
+  },
+  {
+   "id": "bella",
+   "nombre": "Bella",
+   "especie": "perro",
+   "sexo": "hembra",
+   "tamano": "mediano",
+   "edad": 3,
+   "esterilizado": true,
+   "vacunas": true,
+   "lineas": [
+    "Soy Bella, una perrita mediana de unos",
+    "3 años. Tengo buen temperamento, soy",
+    "activa y juguetona. Estoy esterilizada y",
+    "tengo mis vacunas al día. ¡Dale un lugar",
+    "a mis juegos y a mi alegría en tu hogar!"
+   ],
+   "texto": "Soy Bella, una perrita mediana de unos 3 años. Tengo buen temperamento, soy activa y juguetona. Estoy esterilizada y tengo mis vacunas al día. ¡Dale un lugar a mis juegos y a mi alegría en tu hogar!",
+   "foto": {
+    "src": "img/mascotas/bella.webp",
+    "left": 28.019,
+    "top": 26.568,
+    "width": 43.981,
+    "height": 46.148
+   },
+   "pagina": 3
+  },
+  {
+   "id": "metro",
+   "nombre": "Metro",
+   "especie": "perro",
+   "sexo": "macho",
+   "tamano": "grande",
+   "edad": 6,
+   "esterilizado": true,
+   "vacunas": true,
+   "lineas": [
+    "Soy Metro, un perro grande de unos 6",
+    "años. Soy cariñoso e inteligente, y",
+    "disfruto de los largos paseos y los",
+    "juegos. Estoy esterilizado y tengo mis",
+    "vacunas al día. ¡A tu lado, cada paseo",
+    "puede ser el inicio de una gran amistad!"
+   ],
+   "texto": "Soy Metro, un perro grande de unos 6 años. Soy cariñoso e inteligente, y disfruto de los largos paseos y los juegos. Estoy esterilizado y tengo mis vacunas al día. ¡A tu lado, cada paseo puede ser el inicio de una gran amistad!",
+   "foto": {
+    "src": "img/mascotas/metro.webp",
+    "left": 26.433,
+    "top": 26.568,
+    "width": 47.13,
+    "height": 46.148
+   },
+   "pagina": 4
+  },
+  {
+   "id": "luz",
+   "nombre": "Luz",
+   "especie": "perro",
+   "sexo": "hembra",
+   "tamano": "mediano",
+   "edad": 4,
+   "esterilizado": true,
+   "vacunas": true,
+   "lineas": [
+    "Soy Luz, una perrita mediana de unos 4",
+    "años. Soy juguetona, cariñosa y",
+    "tranquila. Estoy esterilizada y tengo mis",
+    "vacunas al día. ¡Me encantaría llenar tus",
+    "días de juegos, ternura y momentos de",
+    "calma!"
+   ],
+   "texto": "Soy Luz, una perrita mediana de unos 4 años. Soy juguetona, cariñosa y tranquila. Estoy esterilizada y tengo mis vacunas al día. ¡Me encantaría llenar tus días de juegos, ternura y momentos de calma!",
+   "foto": {
+    "src": "img/mascotas/luz.webp",
+    "left": 30.432,
+    "top": 23.957,
+    "width": 42.87,
+    "height": 51.333
+   },
+   "pagina": 5
+  },
+  {
+   "id": "juanito",
+   "nombre": "Juanito",
+   "especie": "perro",
+   "sexo": "macho",
+   "tamano": "grande",
+   "edad": 6,
+   "esterilizado": true,
+   "vacunas": true,
+   "lineas": [
+    "Soy Juanito, un perro grande de unos 6",
+    "años. Soy activo, muy amoroso e",
+    "inteligente, y me encantan los paseos.",
+    "Estoy esterilizado y tengo mis vacunas",
+    "al día. ¡Busco un hogar donde compartir",
+    "caminos y regalar todo mi cariño!"
+   ],
+   "texto": "Soy Juanito, un perro grande de unos 6 años. Soy activo, muy amoroso e inteligente, y me encantan los paseos. Estoy esterilizado y tengo mis vacunas al día. ¡Busco un hogar donde compartir caminos y regalar todo mi cariño!",
+   "foto": {
+    "src": "img/mascotas/juanito.webp",
+    "left": 28.163,
+    "top": 26.568,
+    "width": 43.704,
+    "height": 46.148
+   },
+   "pagina": 6
+  },
+  {
+   "id": "negrita",
+   "nombre": "Negrita",
+   "especie": "perro",
+   "sexo": "hembra",
+   "tamano": "mediano",
+   "edad": 4,
+   "esterilizado": true,
+   "vacunas": true,
+   "lineas": [
+    "Soy Negrita, una perrita mediana de",
+    "unos 4 años. Soy juguetona, cariñosa y",
+    "tranquila. Estoy esterilizada y tengo mis",
+    "vacunas al día. ¡Tengo ganas de",
+    "compartir contigo tardes de juegos y",
+    "ratitos de compañía!"
+   ],
+   "texto": "Soy Negrita, una perrita mediana de unos 4 años. Soy juguetona, cariñosa y tranquila. Estoy esterilizada y tengo mis vacunas al día. ¡Tengo ganas de compartir contigo tardes de juegos y ratitos de compañía!",
+   "foto": {
+    "src": "img/mascotas/negrita.webp",
+    "left": 33.333,
+    "top": 26.983,
+    "width": 33.333,
+    "height": 45.259
+   },
+   "pagina": 7
+  },
+  {
+   "id": "laica",
+   "nombre": "Laica",
+   "especie": "perro",
+   "sexo": "hembra",
+   "tamano": "mediano",
+   "edad": 4,
+   "esterilizado": true,
+   "vacunas": true,
+   "lineas": [
+    "Soy Laica, una perrita mediana de unos",
+    "4 años. Soy cariñosa y tranquila. Estoy",
+    "esterilizada y tengo mis vacunas al día.",
+    "¡Sueño con un hogar donde disfrutar de",
+    "las pequeñas cosas y estar cerquita de",
+    "ti!"
+   ],
+   "texto": "Soy Laica, una perrita mediana de unos 4 años. Soy cariñosa y tranquila. Estoy esterilizada y tengo mis vacunas al día. ¡Sueño con un hogar donde disfrutar de las pequeñas cosas y estar cerquita de ti!",
+   "foto": {
+    "src": "img/mascotas/laica.webp",
+    "left": 28.704,
+    "top": 27.138,
+    "width": 42.593,
+    "height": 44.963
+   },
+   "pagina": 8
+  },
+  {
+   "id": "lola",
+   "nombre": "Lola",
+   "especie": "perro",
+   "sexo": "hembra",
+   "tamano": "mediano",
+   "edad": 5,
+   "esterilizado": true,
+   "vacunas": true,
+   "lineas": [
+    "Soy Lola, una perrita mediana de unos 5",
+    "años. Tengo buen temperamento, soy",
+    "activa y juguetona. Estoy esterilizada y",
+    "tengo mis vacunas al día. ¡Hagamos de",
+    "cada día una nueva oportunidad para",
+    "jugar y ser felices juntos!"
+   ],
+   "texto": "Soy Lola, una perrita mediana de unos 5 años. Tengo buen temperamento, soy activa y juguetona. Estoy esterilizada y tengo mis vacunas al día. ¡Hagamos de cada día una nueva oportunidad para jugar y ser felices juntos!",
+   "foto": {
+    "src": "img/mascotas/lola.webp",
+    "left": 28.704,
+    "top": 27.101,
+    "width": 42.593,
+    "height": 45.037
+   },
+   "pagina": 9
+  },
+  {
+   "id": "dona",
+   "nombre": "Dona",
+   "especie": "perro",
+   "sexo": "hembra",
+   "tamano": "mediano",
+   "edad": 4,
+   "esterilizado": true,
+   "vacunas": true,
+   "lineas": [
+    "Soy Dona, una perrita mediana de unos",
+    "4 años. Soy juguetona, cariñosa y",
+    "tranquila. Estoy esterilizada y tengo mis",
+    "vacunas al día. ¡Entre juegos y",
+    "momentos de calma, quiero escribir una",
+    "bonita historia contigo!"
+   ],
+   "texto": "Soy Dona, una perrita mediana de unos 4 años. Soy juguetona, cariñosa y tranquila. Estoy esterilizada y tengo mis vacunas al día. ¡Entre juegos y momentos de calma, quiero escribir una bonita historia contigo!",
+   "foto": {
+    "src": "img/mascotas/dona.webp",
+    "left": 28.704,
+    "top": 27.176,
+    "width": 42.593,
+    "height": 44.889
+   },
+   "pagina": 10
+  },
+  {
+   "id": "sheila",
+   "nombre": "Sheila",
+   "especie": "perro",
+   "sexo": "hembra",
+   "tamano": "mediano",
+   "edad": 6,
+   "esterilizado": true,
+   "vacunas": true,
+   "lineas": [
+    "Soy Sheila, una perrita mediana de unos",
+    "6 años. Soy tranquila, amorosa y muy",
+    "inteligente. Estoy esterilizada y tengo",
+    "mis vacunas al día. ¡Quiero encontrar mi",
+    "lugar a tu lado y llenar de ternura",
+    "nuestros días!"
+   ],
+   "texto": "Soy Sheila, una perrita mediana de unos 6 años. Soy tranquila, amorosa y muy inteligente. Estoy esterilizada y tengo mis vacunas al día. ¡Quiero encontrar mi lugar a tu lado y llenar de ternura nuestros días!",
+   "foto": {
+    "src": "img/mascotas/sheila.webp",
+    "left": 25.347,
+    "top": 27.407,
+    "width": 49.352,
+    "height": 44.444
+   },
+   "pagina": 11
+  }
+ ]
+}

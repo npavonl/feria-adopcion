@@ -1,0 +1,605 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Paraíso Huellitas · Catálogo de adopción</title>
+<meta name="description" content="Conoce a los perritos de Paraíso Huellas – Rescate Animal que esperan un hogar. Esterilizados y con sus vacunas al día.">
+<link rel="icon" href="img/logo.webp" type="image/webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:"LB Ficha";src:url(fonts/LibreBaskerville-Bold-subset.woff) format("woff");font-weight:700;font-display:block;
+  unicode-range:U+0020,U+003A,U+0041-0045,U+0047-0055,U+005A,U+0061,U+0063,U+0065,U+006E,U+006F}
+:root{
+  /* Glifos del PDF original (Libre Baskerville Bold, OFL) para la ficha sin internet */
+  --red:#E71D26; --red-dark:#B9141A; --ink:#0B0A09; --paper:#EDEAE6; --cream:#FBF8F4; --line:#E6E0D8; --muted:#5f5a54;
+  --serif:'Libre Baskerville','Baskerville','Georgia','Times New Roman',serif;
+  --sans:system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+#mascotas,#contacto{scroll-margin-top:64px}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--sans);line-height:1.5;-webkit-font-smoothing:antialiased}
+img{display:block}
+a{color:inherit}
+.wrap{width:min(1180px,100% - 32px);margin-inline:auto}
+
+/* ---------- Cabecera ---------- */
+.top{position:sticky;top:0;z-index:20;background:rgba(251,248,244,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:14px;height:64px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand img{width:44px;height:44px;border-radius:50%;background:#fff;object-fit:contain;padding:2px;border:1px solid var(--line)}
+.brand b{font-family:var(--serif);font-size:1.25rem;letter-spacing:.04em}
+.brand small{display:block;font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);line-height:1.1}
+.top nav{margin-left:auto;display:flex;gap:6px}
+.top nav a{text-decoration:none;font-weight:600;font-size:.92rem;padding:8px 14px;border-radius:999px}
+.top nav a:hover{background:var(--paper)}
+.top nav a.cta{background:var(--red);color:#fff}
+.top nav a.cta:hover{background:var(--red-dark)}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;overflow:hidden;background:#fff;border-bottom:1px solid var(--line)}
+.hero .deco{position:absolute;pointer-events:none;user-select:none}
+.hero{--blob:min(560px,86vw)}
+.hero .d-top{top:calc(var(--blob) * -0.14);left:50%;width:var(--blob);transform:translateX(-50%)}
+.hero .d-left{left:0;top:-6.5vw;width:clamp(64px,20vw,300px)}
+.hero .d-right{right:0;top:-6.5vw;width:clamp(56px,18vw,260px)}
+.hero .inner{position:relative;text-align:center;padding:calc(var(--blob) * .33 + 26px) 0 clamp(44px,6vw,72px);max-width:640px;margin-inline:auto}
+@media (max-width:560px){.hero .inner{padding-inline:46px}.brand small{display:none}.hero .d-left,.hero .d-right{opacity:.9}}
+.hero .kicker{font-family:var(--serif);font-size:1.05rem;margin:0}
+.hero h1{font-family:var(--serif);font-size:clamp(2rem,5.4vw,3.6rem);line-height:1.1;margin:.15em 0 .4em;color:var(--red)}
+.hero p.lead{margin:0 auto 1.4em;max-width:46ch;color:#2b2825;font-size:1.05rem}
+.btn{display:inline-flex;align-items:center;gap:8px;border:0;cursor:pointer;font:inherit;font-weight:700;text-decoration:none;padding:12px 22px;border-radius:999px;background:var(--red);color:#fff;transition:background .15s,transform .15s}
+.btn:hover{background:var(--red-dark)}
+.btn:active{transform:translateY(1px)}
+.btn.ghost{background:#fff;color:var(--ink);border:2px solid var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:#fff}
+.btn.wa{background:#1f9d55}.btn.wa:hover{background:#17803f}
+.btn.dark{background:var(--ink)}.btn.dark:hover{background:#2a2724}
+.btn svg{width:18px;height:18px;fill:currentColor;flex:none}
+:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+
+/* ---------- Catálogo ---------- */
+.catalog{padding:44px 0 64px}
+.bar{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:26px}
+.bar h2{font-family:var(--serif);font-size:1.6rem;margin:0 auto 0 0}
+.bar h2 span{color:var(--red)}
+.pills{display:flex;gap:8px;flex-wrap:wrap}
+.pill{font:inherit;font-weight:600;font-size:.92rem;padding:8px 16px;border-radius:999px;border:2px solid var(--ink);background:#fff;cursor:pointer}
+.pill[aria-pressed=true]{background:var(--ink);color:#fff}
+.pill:hover:not([aria-pressed=true]){background:var(--paper)}
+.grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));list-style:none;margin:0;padding:0}
+.grid li{display:flex}
+.card{position:relative;height:100%;background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;cursor:pointer;text-align:center;padding:0;font:inherit;color:inherit;width:100%;transition:transform .18s,box-shadow .18s,border-color .18s;display:block}
+.card:hover{transform:translateY(-4px);box-shadow:0 14px 30px -14px rgba(0,0,0,.35);border-color:var(--ink)}
+.card .ph{position:relative;display:block;aspect-ratio:4/5;background:radial-gradient(ellipse at 50% 85%,#f3efe9 0,#fff 62%)}
+.card .ph img{position:absolute;left:14px;top:30px;width:calc(100% - 28px);height:calc(100% - 38px);object-fit:contain;filter:drop-shadow(0 8px 10px rgba(0,0,0,.18))}
+.card .meta{padding:8px 14px 18px}
+.card .nm{font-family:var(--serif);font-weight:700;font-size:1.15rem;color:var(--red);letter-spacing:.02em;text-transform:uppercase;display:block}
+.card .sub{font-size:.86rem;color:var(--muted)}
+.card .tag{z-index:2;position:absolute;top:10px;left:10px;font-size:.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:var(--ink);color:#fff;padding:3px 9px;border-radius:999px}
+.empty{display:none;text-align:center;color:var(--muted);padding:40px 0}
+
+/* ---------- Ficha (diseño original por capas) ----------
+   Contenedor con la proporción de la página (810 × 1012,5 pt = 4:5); capas en %, textos en cqw.
+   Las capas vienen de una página A4: Canva las muestra al mismo ancho y recortadas arriba y abajo
+   (3509/2481 − 1,25) / 2 / 1,25 = 6,57 % de la altura. */
+.ficha{position:relative;container-type:inline-size;aspect-ratio:810/1012.5;background:#fff;overflow:hidden;width:100%;color:#000}
+.ficha > *{position:absolute;margin:0}
+.ficha img{user-select:none;-webkit-user-drag:none}
+.ficha .l,.ficha .c,.ficha .r{top:-6.57%;height:auto;z-index:0}
+.ficha .l{left:0;width:20.64%}
+.ficha .c{left:20.64%;width:55.18%}
+.ficha .r{left:75.82%;width:24.18%}
+.ficha .pet{z-index:1;object-fit:contain}
+.ficha .hello{z-index:2;left:0;right:0;top:14.78%;text-align:center;font-family:"LB Ficha",var(--serif);font-weight:700;font-size:5.185cqw;line-height:1;white-space:nowrap}
+.ficha .pname{z-index:2;left:0;right:0;top:21%;text-align:center;font-family:"LB Ficha",var(--serif);font-weight:700;color:var(--red);text-transform:uppercase;font-size:7.406cqw;line-height:1;white-space:nowrap}
+.ficha .story{z-index:2;left:20.835%;width:58.33%;top:74.35%;font-family:"Helvetica Neue",Helvetica,Arial,"Liberation Sans",sans-serif;font-size:3.209cqw;line-height:1.3846;letter-spacing:-.022em}
+/* Cada renglón respeta el corte del original y se justifica igual (el último a la izquierda) */
+.ficha .story span{display:block;text-align:justify;text-align-last:justify;white-space:nowrap}
+.ficha .story span:last-child{text-align-last:left}
+
+/* ---------- Vista de adopción: todas las fichas en un solo scroll ---------- */
+dialog#dlg{border:0;padding:0;margin:0;background:#2a2421;max-width:none;max-height:none;width:100vw;height:100dvh;overflow:hidden;color:var(--ink)}
+dialog#dlg::backdrop{background:#2a2421}
+.feed{height:100%;overflow-y:auto;overscroll-behavior:contain;scroll-snap-type:y proximity;
+  --barh:76px;padding:16px 16px calc(var(--barh) + 16px)}
+.feed article{scroll-snap-align:center;scroll-margin-block:16px calc(var(--barh) + 16px);display:flex;justify-content:center;margin:0 auto 24px}
+.feed article:last-child{margin-bottom:0}
+/* Cada ficha cabe completa en pantalla: el ancho se limita por la altura disponible (4:5) */
+.feed .ficha{width:min(100%,640px,calc((100dvh - var(--barh) - 32px) * 0.8));border-radius:6px;box-shadow:0 18px 50px rgba(0,0,0,.45)}
+.close{position:fixed;top:14px;right:14px;z-index:10;width:44px;height:44px;border-radius:50%;border:0;background:#fff;color:var(--ink);font-size:1.5rem;line-height:1;cursor:pointer;display:grid;place-items:center;box-shadow:0 4px 14px rgba(0,0,0,.35)}
+.close:hover{background:var(--red);color:#fff}
+.counter{position:fixed;top:14px;left:14px;z-index:10;background:rgba(255,255,255,.92);border-radius:999px;padding:8px 14px;font-size:.85rem;font-weight:700}
+/* Barra de contacto fija */
+.adoptbar{position:fixed;left:0;right:0;bottom:0;z-index:10;min-height:76px;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:10px;padding:12px 16px;background:var(--ink);color:#fff}
+.adoptbar .who{font-family:var(--serif);font-weight:700;font-size:1.05rem;margin-right:8px}
+.adoptbar .who span{color:var(--red)}
+.adoptbar .btn{padding:10px 18px;font-size:.92rem}
+.adoptbar .btn.ghost{background:transparent;color:#fff;border-color:#fff}
+.adoptbar .btn.ghost:hover{background:#fff;color:var(--ink)}
+@media (max-width:620px){
+  .feed{--barh:112px;padding-inline:0}
+  .feed .ficha{border-radius:0}
+  .adoptbar .who{width:100%;text-align:center;margin:0}
+  .adoptbar .btn{padding:9px 14px;font-size:.85rem}
+  .adoptbar .hide-sm{display:none}
+}
+
+/* ---------- Tablet y escritorio: modal con ficha + panel de información ---------- */
+dialog#dlgm{border:0;padding:0;background:transparent;max-width:none;max-height:none;width:100%;height:100%;overflow:auto}
+dialog#dlgm::backdrop{background:rgba(11,10,9,.72);backdrop-filter:blur(3px)}
+#dlgm .sheet{min-height:100%;display:grid;place-items:center;padding:16px}
+#dlgm .panel{position:relative;display:grid;grid-template-columns:minmax(0,min(560px,calc((100vh - 48px) * 0.8))) minmax(260px,340px);background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.5);width:max-content;max-width:100%}
+#dlgm .info{padding:30px 26px;display:flex;flex-direction:column;gap:14px;background:var(--cream);border-left:1px solid var(--line)}
+#dlgm .eyebrow{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0}
+#dlgm h3{font-family:var(--serif);font-size:1.9rem;line-height:1.1;margin:0;color:var(--red);text-transform:uppercase}
+#dlgm .chips{display:flex;gap:8px;flex-wrap:wrap}
+#dlgm .chip{font-size:.82rem;font-weight:600;background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px 12px}
+#dlgm .note{margin:0;color:#2b2825;font-size:.95rem}
+#dlgm .actions{display:grid;gap:10px;margin-top:4px}
+#dlgm .actions .btn{justify-content:center}
+#dlgm .navrow{display:flex;gap:8px;margin-top:auto;padding-top:10px}
+#dlgm .navrow .btn{flex:1;justify-content:center;padding:10px 12px;font-size:.9rem}
+#dlgm .m-close{position:absolute;top:10px;right:10px;z-index:10;width:40px;height:40px;border-radius:50%;border:0;background:var(--ink);color:#fff;font-size:1.4rem;line-height:1;cursor:pointer;display:grid;place-items:center}
+#dlgm .m-close:hover{background:var(--red)}
+@media (max-width:820px){
+  #dlgm .sheet{padding:0;place-items:start center}
+  #dlgm .panel{grid-template-columns:1fr;border-radius:0;width:100%;min-height:100%}
+  #dlgm .info{border-left:0;border-top:1px solid var(--line)}
+}
+
+/* ---------- Contacto ---------- */
+.contact{background:var(--ink);color:#fff;padding:56px 0}
+.contact .wrap{display:grid;grid-template-columns:auto 1fr;gap:34px;align-items:center}
+.contact img{width:150px;height:150px;border-radius:50%;background:#fff;object-fit:contain;padding:14px}
+.contact h2{font-family:var(--serif);font-size:clamp(1.5rem,3.4vw,2.1rem);line-height:1.15;margin:0 0 .5em}
+.contact .row{display:flex;flex-wrap:wrap;gap:12px}
+.contact a.btn.ghost{background:transparent;color:#fff;border-color:#fff}
+.contact a.btn.ghost:hover{background:#fff;color:var(--ink)}
+@media (max-width:620px){.contact .wrap{grid-template-columns:1fr;text-align:center;justify-items:center}.contact .row{justify-content:center}}
+footer{background:#000;color:#a9a39b;font-size:.82rem;text-align:center;padding:16px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#inicio" aria-label="Paraíso Huellas, inicio">
+      <img src="img/logo.webp" alt="" width="44" height="44">
+      <span><b>Paraíso Huellas</b><small>Rescate animal</small></span>
+    </a>
+    <nav aria-label="Principal">
+      <a href="#mascotas">Mascotas</a>
+      <a class="cta" href="#contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+  <section class="hero">
+    <img class="deco d-left" src="img/capas/perros_1_izquierda.webp" alt="">
+    <img class="deco d-right" src="img/capas/perros_3_derecha.webp" alt="">
+    <img class="deco d-top" src="img/capas/perros_2_centro_superior.webp" alt="">
+    <div class="wrap">
+      <div class="inner">
+        <p class="kicker">Conoce a quienes</p>
+        <h1>esperan un hogar</h1>
+        <p class="lead">Perritos rescatados, esterilizados y con sus vacunas al día. Cada uno tiene una historia y está listo para empezar la suya contigo.</p>
+        <a class="btn" href="#mascotas">Ver mascotas</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="catalog" id="mascotas" aria-labelledby="t-masc">
+    <div class="wrap">
+      <div class="bar">
+        <h2 id="t-masc">Mascotas en adopción <span id="count"></span></h2>
+      </div>
+      <ul class="grid" id="grid"></ul>
+    </div>
+  </section>
+</main>
+
+<section class="contact" id="contacto">
+  <div class="wrap">
+    <img src="img/logo.webp" alt="Logo de Paraíso Huellas" width="150" height="150" loading="lazy">
+    <div>
+      <h2>Si estás interesado en alguno de nosotros, no dudes en contactarte</h2>
+      <div class="row">
+        <a class="btn wa" id="wa-main" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.5 14.95L2 22l5.2-1.5A9.9 9.9 0 1 0 12.04 2Zm5.8 14.05c-.25.7-1.45 1.33-2 1.4-.5.07-1.13.1-1.8-.12-.42-.13-.95-.31-1.63-.6-2.87-1.24-4.74-4.13-4.88-4.32-.14-.19-1.17-1.56-1.17-2.97 0-1.42.74-2.12 1-2.4.27-.3.58-.37.78-.37h.56c.18 0 .43-.07.67.52.25.6.85 2.07.92 2.22.08.15.13.33.03.52-.1.2-.15.31-.3.48l-.45.52c-.15.15-.3.31-.13.6.18.3.78 1.28 1.67 2.07 1.14 1.02 2.1 1.33 2.4 1.48.3.15.47.13.65-.08.18-.2.75-.88.95-1.18.2-.3.4-.25.67-.15.27.1 1.73.82 2.03.97.3.15.5.22.57.35.08.12.08.72-.17 1.42Z"/></svg>WhatsApp</a>
+        <a class="btn ghost" href="tel:+593982382415">Telf: 0982382415</a>
+        <a class="btn ghost" href="mailto:paraisoanimalec@outlook.com">paraisoanimalec@outlook.com</a>
+      </div>
+    </div>
+  </div>
+</section>
+<footer>© Paraíso Huellas · Rescate animal</footer>
+
+<!-- Tablet y escritorio (≥ 768 px): modal de una ficha -->
+<dialog id="dlgm" aria-label="Ficha de la mascota">
+  <div class="sheet" id="sheet">
+    <div class="panel">
+      <button class="m-close" id="m-close" aria-label="Cerrar">×</button>
+      <div id="mficha"></div>
+      <aside class="info">
+        <p class="eyebrow">Perro en adopción</p>
+        <h3 id="i-name"></h3>
+        <div class="chips" id="i-chips"></div>
+        <p class="note">Esterilizado/a y con sus vacunas al día. Escríbenos y coordinamos una visita.</p>
+        <div class="actions">
+          <a class="btn wa" id="i-wa" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.5 14.95L2 22l5.2-1.5A9.9 9.9 0 1 0 12.04 2Zm5.8 14.05c-.25.7-1.45 1.33-2 1.4-.5.07-1.13.1-1.8-.12-.42-.13-.95-.31-1.63-.6-2.87-1.24-4.74-4.13-4.88-4.32-.14-.19-1.17-1.56-1.17-2.97 0-1.42.74-2.12 1-2.4.27-.3.58-.37.78-.37h.56c.18 0 .43-.07.67.52.25.6.85 2.07.92 2.22.08.15.13.33.03.52-.1.2-.15.31-.3.48l-.45.52c-.15.15-.3.31-.13.6.18.3.78 1.28 1.67 2.07 1.14 1.02 2.1 1.33 2.4 1.48.3.15.47.13.65-.08.18-.2.75-.88.95-1.18.2-.3.4-.25.67-.15.27.1 1.73.82 2.03.97.3.15.5.22.57.35.08.12.08.72-.17 1.42Z"/></svg><span>Quiero adoptar</span></a>
+          <a class="btn dark" href="tel:+593982382415">Llamar · 0982382415</a>
+          <a class="btn ghost" id="i-mail" href="#">Escribir por correo</a>
+        </div>
+        <div class="navrow">
+          <button class="btn ghost" id="prev">← Anterior</button>
+          <button class="btn ghost" id="next">Siguiente →</button>
+        </div>
+      </aside>
+    </div>
+  </div>
+</dialog>
+
+<!-- Móvil (< 768 px): todas las fichas en un solo scroll -->
+<dialog id="dlg" aria-label="Fichas de adopción">
+  <span class="counter" id="counter" aria-live="polite"></span>
+  <button class="close" id="close" aria-label="Volver al catálogo">×</button>
+  <div class="feed" id="feed"></div>
+  <div class="adoptbar">
+    <p class="who" style="margin:0">Adopta a <span id="b-name"></span></p>
+    <a class="btn wa" id="b-wa" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.5 14.95L2 22l5.2-1.5A9.9 9.9 0 1 0 12.04 2Zm5.8 14.05c-.25.7-1.45 1.33-2 1.4-.5.07-1.13.1-1.8-.12-.42-.13-.95-.31-1.63-.6-2.87-1.24-4.74-4.13-4.88-4.32-.14-.19-1.17-1.56-1.17-2.97 0-1.42.74-2.12 1-2.4.27-.3.58-.37.78-.37h.56c.18 0 .43-.07.67.52.25.6.85 2.07.92 2.22.08.15.13.33.03.52-.1.2-.15.31-.3.48l-.45.52c-.15.15-.3.31-.13.6.18.3.78 1.28 1.67 2.07 1.14 1.02 2.1 1.33 2.4 1.48.3.15.47.13.65-.08.18-.2.75-.88.95-1.18.2-.3.4-.25.67-.15.27.1 1.73.82 2.03.97.3.15.5.22.57.35.08.12.08.72-.17 1.42Z"/></svg><span>Quiero adoptar</span></a>
+    <a class="btn ghost" href="tel:+593982382415"><span>Llamar<span class="hide-sm"> · 0982382415</span></span></a>
+    <a class="btn ghost" id="b-mail" href="#">Correo</a>
+  </div>
+</dialog>
+
+<script>
+const PETS = [
+{
+"id": "zuko",
+"name": "Zuko",
+"sp": "perro",
+"label": "Perrito grande",
+"age": "6 años",
+"text": "Soy Zuko, un macho de tamaño grande y unos 6 años. Soy juguetón, amoroso y disfruto de los paseos tranquilos. Estoy esterilizado y tengo mis vacunas al día. ¡Caminemos sin prisa y llenemos nuestros días de cariño!",
+"lines": [
+"Soy Zuko, un macho de tamaño grande",
+"y unos 6 años. Soy juguetón, amoroso y",
+"disfruto de los paseos tranquilos. Estoy",
+"esterilizado y tengo mis vacunas al día.",
+"¡Caminemos sin prisa y llenemos",
+"nuestros días de cariño!"
+],
+"x": 28.559,
+"y": 26.568,
+"w": 42.87,
+"h": 46.148
+},
+{
+"id": "paquita",
+"name": "Paquita",
+"sp": "perro",
+"label": "Perrita grande",
+"age": "6 años",
+"text": "Soy Paquita, una perrita grande de unos 6 años. Soy activa, inteligente y muy amorosa; me encantan los paseos. Estoy esterilizada y tengo mis vacunas al día. ¡Compartamos paseos, aventuras y mucho cariño!",
+"lines": [
+"Soy Paquita, una perrita grande de unos",
+"6 años. Soy activa, inteligente y muy",
+"amorosa; me encantan los paseos.",
+"Estoy esterilizada y tengo mis vacunas",
+"al día. ¡Compartamos paseos, aventuras",
+"y mucho cariño!"
+],
+"x": 27.983,
+"y": 26.568,
+"w": 44.074,
+"h": 46.148
+},
+{
+"id": "bella",
+"name": "Bella",
+"sp": "perro",
+"label": "Perrita mediana",
+"age": "3 años",
+"text": "Soy Bella, una perrita mediana de unos 3 años. Tengo buen temperamento, soy activa y juguetona. Estoy esterilizada y tengo mis vacunas al día. ¡Dale un lugar a mis juegos y a mi alegría en tu hogar!",
+"lines": [
+"Soy Bella, una perrita mediana de unos",
+"3 años. Tengo buen temperamento, soy",
+"activa y juguetona. Estoy esterilizada y",
+"tengo mis vacunas al día. ¡Dale un lugar",
+"a mis juegos y a mi alegría en tu hogar!"
+],
+"x": 28.019,
+"y": 26.568,
+"w": 43.981,
+"h": 46.148
+},
+{
+"id": "metro",
+"name": "Metro",
+"sp": "perro",
+"label": "Perrito grande",
+"age": "6 años",
+"text": "Soy Metro, un perro grande de unos 6 años. Soy cariñoso e inteligente, y disfruto de los largos paseos y los juegos. Estoy esterilizado y tengo mis vacunas al día. ¡A tu lado, cada paseo puede ser el inicio de una gran amistad!",
+"lines": [
+"Soy Metro, un perro grande de unos 6",
+"años. Soy cariñoso e inteligente, y",
+"disfruto de los largos paseos y los",
+"juegos. Estoy esterilizado y tengo mis",
+"vacunas al día. ¡A tu lado, cada paseo",
+"puede ser el inicio de una gran amistad!"
+],
+"x": 26.433,
+"y": 26.568,
+"w": 47.13,
+"h": 46.148
+},
+{
+"id": "luz",
+"name": "Luz",
+"sp": "perro",
+"label": "Perrita mediana",
+"age": "4 años",
+"text": "Soy Luz, una perrita mediana de unos 4 años. Soy juguetona, cariñosa y tranquila. Estoy esterilizada y tengo mis vacunas al día. ¡Me encantaría llenar tus días de juegos, ternura y momentos de calma!",
+"lines": [
+"Soy Luz, una perrita mediana de unos 4",
+"años. Soy juguetona, cariñosa y",
+"tranquila. Estoy esterilizada y tengo mis",
+"vacunas al día. ¡Me encantaría llenar tus",
+"días de juegos, ternura y momentos de",
+"calma!"
+],
+"x": 30.432,
+"y": 23.957,
+"w": 42.87,
+"h": 51.333
+},
+{
+"id": "juanito",
+"name": "Juanito",
+"sp": "perro",
+"label": "Perrito grande",
+"age": "6 años",
+"text": "Soy Juanito, un perro grande de unos 6 años. Soy activo, muy amoroso e inteligente, y me encantan los paseos. Estoy esterilizado y tengo mis vacunas al día. ¡Busco un hogar donde compartir caminos y regalar todo mi cariño!",
+"lines": [
+"Soy Juanito, un perro grande de unos 6",
+"años. Soy activo, muy amoroso e",
+"inteligente, y me encantan los paseos.",
+"Estoy esterilizado y tengo mis vacunas",
+"al día. ¡Busco un hogar donde compartir",
+"caminos y regalar todo mi cariño!"
+],
+"x": 28.163,
+"y": 26.568,
+"w": 43.704,
+"h": 46.148
+},
+{
+"id": "negrita",
+"name": "Negrita",
+"sp": "perro",
+"label": "Perrita mediana",
+"age": "4 años",
+"text": "Soy Negrita, una perrita mediana de unos 4 años. Soy juguetona, cariñosa y tranquila. Estoy esterilizada y tengo mis vacunas al día. ¡Tengo ganas de compartir contigo tardes de juegos y ratitos de compañía!",
+"lines": [
+"Soy Negrita, una perrita mediana de",
+"unos 4 años. Soy juguetona, cariñosa y",
+"tranquila. Estoy esterilizada y tengo mis",
+"vacunas al día. ¡Tengo ganas de",
+"compartir contigo tardes de juegos y",
+"ratitos de compañía!"
+],
+"x": 33.333,
+"y": 26.983,
+"w": 33.333,
+"h": 45.259
+},
+{
+"id": "laica",
+"name": "Laica",
+"sp": "perro",
+"label": "Perrita mediana",
+"age": "4 años",
+"text": "Soy Laica, una perrita mediana de unos 4 años. Soy cariñosa y tranquila. Estoy esterilizada y tengo mis vacunas al día. ¡Sueño con un hogar donde disfrutar de las pequeñas cosas y estar cerquita de ti!",
+"lines": [
+"Soy Laica, una perrita mediana de unos",
+"4 años. Soy cariñosa y tranquila. Estoy",
+"esterilizada y tengo mis vacunas al día.",
+"¡Sueño con un hogar donde disfrutar de",
+"las pequeñas cosas y estar cerquita de",
+"ti!"
+],
+"x": 28.704,
+"y": 27.138,
+"w": 42.593,
+"h": 44.963
+},
+{
+"id": "lola",
+"name": "Lola",
+"sp": "perro",
+"label": "Perrita mediana",
+"age": "5 años",
+"text": "Soy Lola, una perrita mediana de unos 5 años. Tengo buen temperamento, soy activa y juguetona. Estoy esterilizada y tengo mis vacunas al día. ¡Hagamos de cada día una nueva oportunidad para jugar y ser felices juntos!",
+"lines": [
+"Soy Lola, una perrita mediana de unos 5",
+"años. Tengo buen temperamento, soy",
+"activa y juguetona. Estoy esterilizada y",
+"tengo mis vacunas al día. ¡Hagamos de",
+"cada día una nueva oportunidad para",
+"jugar y ser felices juntos!"
+],
+"x": 28.704,
+"y": 27.101,
+"w": 42.593,
+"h": 45.037
+},
+{
+"id": "dona",
+"name": "Dona",
+"sp": "perro",
+"label": "Perrita mediana",
+"age": "4 años",
+"text": "Soy Dona, una perrita mediana de unos 4 años. Soy juguetona, cariñosa y tranquila. Estoy esterilizada y tengo mis vacunas al día. ¡Entre juegos y momentos de calma, quiero escribir una bonita historia contigo!",
+"lines": [
+"Soy Dona, una perrita mediana de unos",
+"4 años. Soy juguetona, cariñosa y",
+"tranquila. Estoy esterilizada y tengo mis",
+"vacunas al día. ¡Entre juegos y",
+"momentos de calma, quiero escribir una",
+"bonita historia contigo!"
+],
+"x": 28.704,
+"y": 27.176,
+"w": 42.593,
+"h": 44.889
+},
+{
+"id": "sheila",
+"name": "Sheila",
+"sp": "perro",
+"label": "Perrita mediana",
+"age": "6 años",
+"text": "Soy Sheila, una perrita mediana de unos 6 años. Soy tranquila, amorosa y muy inteligente. Estoy esterilizada y tengo mis vacunas al día. ¡Quiero encontrar mi lugar a tu lado y llenar de ternura nuestros días!",
+"lines": [
+"Soy Sheila, una perrita mediana de unos",
+"6 años. Soy tranquila, amorosa y muy",
+"inteligente. Estoy esterilizada y tengo",
+"mis vacunas al día. ¡Quiero encontrar mi",
+"lugar a tu lado y llenar de ternura",
+"nuestros días!"
+],
+"x": 25.347,
+"y": 27.407,
+"w": 49.352,
+"h": 44.444
+}
+];
+const PHONE = '593982382415', MAIL = 'paraisoanimalec@outlook.com';
+const $ = s => document.querySelector(s);
+const grid = $('#grid'), dlg = $('#dlg'), feed = $('#feed'), dlgm = $('#dlgm'), mficha = $('#mficha');
+const isMobile = () => matchMedia('(max-width: 767px)').matches;
+const wa = t => `https://wa.me/${PHONE}?text=${encodeURIComponent(t)}`;
+$('#wa-main').href = wa('Hola Paraíso Huellas, quisiera información sobre la adopción.');
+
+function renderGrid(){
+  grid.innerHTML = PETS.map(p => `
+    <li><button class="card" data-id="${p.id}" aria-label="Ver ficha de ${p.name}">
+      <span class="tag">Perro</span>
+      <span class="ph"><img src="img/mascotas/${p.id}.webp" alt="${p.name}, ${p.label.toLowerCase()} de ${p.age}" loading="lazy"></span>
+      <span class="meta"><span class="nm">${p.name}</span><span class="sub">${p.label} · ${p.age}</span></span>
+    </button></li>`).join('');
+  $('#count').textContent = `(${PETS.length})`;
+}
+
+/* Ficha = una sola pieza escalable: capas + foto + textos (%, cqw) */
+function fichaHTML(p){
+  return `<div class="ficha" role="img" aria-label="Ficha de adopción de ${p.name}: ${p.text}">
+    <img class="l" src="img/capas/perros_1_izquierda.webp" alt="">
+    <img class="c" src="img/capas/perros_2_centro_superior.webp" alt="">
+    <img class="r" src="img/capas/perros_3_derecha.webp" alt="">
+    <img class="pet" src="img/mascotas/${p.id}.webp" alt="" loading="lazy" decoding="async" style="left:${p.x}%;top:${p.y}%;width:${p.w}%;height:${p.h}%">
+    <p class="hello">Conoce a:</p>
+    <h2 class="pname">${p.name}</h2>
+    <p class="story">${p.lines.map(l => `<span>${l}</span>`).join('')}</p>
+  </div>`;
+}
+// Encoge el nombre si no cabe (mide el texto real, no el contenedor)
+function fitNames(root = feed){
+  root.querySelectorAll('.pname').forEach(n => {
+    n.style.fontSize = '';
+    const max = n.parentElement.clientWidth * 0.76;
+    const r = document.createRange(); r.selectNodeContents(n);
+    const w = r.getBoundingClientRect().width;
+    if (w > max) n.style.fontSize = (parseFloat(getComputedStyle(n).fontSize) * max / w) + 'px';
+  });
+}
+const mailTo = p => `mailto:${MAIL}?subject=${encodeURIComponent('Adopción de ' + p.name)}&body=${encodeURIComponent('Hola Paraíso Huellas, me interesa adoptar a ' + p.name + '.')}`;
+const waPet = p => wa(`Hola Paraíso Huellas, me interesa adoptar a ${p.name}. ¿Podrían darme más información?`);
+
+feed.innerHTML = PETS.map(p => `<article id="f-${p.id}" data-id="${p.id}">${fichaHTML(p)}</article>`).join('');
+
+let current = null;
+function setCurrent(id){
+  if (id === current) return; current = id;
+  const i = PETS.findIndex(p => p.id === id), p = PETS[i];
+  $('#b-name').textContent = p.name;
+  $('#counter').textContent = `${i + 1} / ${PETS.length}`;
+  $('#b-wa').href = waPet(p);
+  $('#b-mail').href = mailTo(p);
+  if (dlg.open) history.replaceState({adopt:true}, '', '#' + id);
+}
+// La ficha más visible define la mascota actual (nombre en la barra, enlace de WhatsApp y #hash)
+const io = new IntersectionObserver(es => {
+  let best = null;
+  es.forEach(e => { if (e.isIntersecting && (!best || e.intersectionRatio > best.intersectionRatio)) best = e; });
+  if (best && best.intersectionRatio > 0.5) setCurrent(best.target.dataset.id);
+}, {root: feed, threshold: [0.5, 0.75, 1]});
+feed.querySelectorAll('article').forEach(a => io.observe(a));
+
+/* ---- Tablet / escritorio: modal ---- */
+let mIndex = 0;
+function openModal(id, push = true){
+  mIndex = PETS.findIndex(p => p.id === id); const p = PETS[mIndex];
+  mficha.innerHTML = fichaHTML(p).replace('loading="lazy" ', '');
+  $('#i-name').textContent = p.name;
+  $('#i-chips').innerHTML = `<span class="chip">${p.label}</span><span class="chip">${p.age}</span>`;
+  $('#i-wa').href = waPet(p); $('#i-mail').href = mailTo(p);
+  if (!dlgm.open){ dlgm.showModal(); document.body.style.overflow = 'hidden'; if (push) history.pushState({adopt:true}, '', '#' + id); }
+  else history.replaceState({adopt:true}, '', '#' + id);
+  current = id; dlgm.scrollTop = 0;
+  requestAnimationFrame(() => fitNames(mficha));
+  if (document.fonts) document.fonts.ready.then(() => fitNames(mficha));
+}
+const step = d => openModal(PETS[(mIndex + d + PETS.length) % PETS.length].id);
+$('#prev').onclick = () => step(-1); $('#next').onclick = () => step(1);
+$('#m-close').onclick = () => closeView();
+dlgm.addEventListener('click', e => { if (e.target === dlgm || e.target === $('#sheet')) closeView(); });
+dlgm.addEventListener('cancel', e => { e.preventDefault(); closeView(); });
+dlgm.addEventListener('keydown', e => { if (e.key === 'ArrowLeft') step(-1); if (e.key === 'ArrowRight') step(1); });
+dlgm.addEventListener('close', () => { document.body.style.overflow = ''; const c = current && grid.querySelector(`[data-id="${current}"]`); if (c) c.focus({preventScroll: true}); });
+
+/* ---- Móvil: scroll con todas las fichas ---- */
+function openPet(id, push = true){
+  if (!isMobile()) return openModal(id, push);
+  if (!dlg.open){ dlg.showModal(); document.body.style.overflow = 'hidden'; if (push) history.pushState({adopt:true}, '', '#' + id); }
+  fitNames();
+  const el = document.getElementById('f-' + id);
+  feed.style.scrollSnapType = 'none';          // salto directo a la mascota elegida
+  el.scrollIntoView({block: 'center'});
+  requestAnimationFrame(() => { feed.style.scrollSnapType = ''; });
+  current = null; setCurrent(id);
+  $('#close').focus({preventScroll: true});
+}
+function closeAll(){ if (dlg.open) dlg.close(); if (dlgm.open) dlgm.close(); }
+function closeView(){ if (history.state && history.state.adopt) history.back(); else closeAll(); }
+grid.addEventListener('click', e => { const c = e.target.closest('.card'); if (c) openPet(c.dataset.id); });
+$('#close').onclick = closeView;
+dlg.addEventListener('cancel', e => { e.preventDefault(); closeView(); });   // tecla Esc
+dlg.addEventListener('close', () => {
+  document.body.style.overflow = '';
+  const card = current && grid.querySelector(`[data-id="${current}"]`);
+  if (card){ card.scrollIntoView({block: 'center'}); card.focus({preventScroll: true}); }
+});
+// Botón "atrás" del navegador cierra la vista
+addEventListener('popstate', () => { closeAll(); history.replaceState(null, '', location.pathname + location.search); });
+// Flechas arriba/abajo: mascota anterior / siguiente
+dlg.addEventListener('keydown', e => {
+  if (!['ArrowDown','ArrowUp','PageDown','PageUp'].includes(e.key)) return;
+  e.preventDefault();
+  const i = PETS.findIndex(p => p.id === current), d = (e.key === 'ArrowDown' || e.key === 'PageDown') ? 1 : -1;
+  const n = PETS[Math.min(PETS.length - 1, Math.max(0, i + d))];
+  document.getElementById('f-' + n.id).scrollIntoView({block: 'center', behavior: 'smooth'});
+});
+addEventListener('resize', () => { if (dlg.open) fitNames(); if (dlgm.open) fitNames(mficha); });
+if (document.fonts) document.fonts.ready.then(() => dlg.open && fitNames());
+
+renderGrid();
+const h = location.hash.slice(1); if (PETS.some(p => p.id === h)) openPet(h, false);
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+Paraíso Huellitas – Catálogo de adopción
+=========================================
+index.html ............ Abre este archivo en el navegador (funciona sin servidor). Misma estructura que la
+                        web de AULLA: portada con capas, tarjetas con foto y contacto. Al tocar una tarjeta:
+                        · Tablet y escritorio (≥ 768 px): modal con la ficha + datos, WhatsApp, llamar, correo
+                          y Anterior/Siguiente.
+                        · Móvil (< 768 px): todas las fichas en un solo scroll, empezando por la elegida,
+                          con barra fija de contacto de la mascota visible.
+                        Esc, × o "atrás" del navegador cierran en ambos casos.
+mascotas.json ......... Datos reutilizables de las 11 mascotas (textos por renglón, sexo, tamaño, edad,
+                        y posición de la foto en % de la página) + datos de contacto.
+img/mascotas/*.webp ... Fotos recortadas del PDF con fondo transparente.
+img/logo.webp ......... Logo de la última página del PDF.
+img/capas/*.webp ...... Capas decorativas (carpeta "capas"), ubicadas como en Canva: mismo ancho que en
+                        AULLA y top:-6.57% (recorte A4 -> 4:5).
+fonts/ ................ Libre Baskerville Bold (OFL) con los glifos del PDF, para los títulos sin internet.
+verificacion/ ......... Capturas: Canva (Zuko) y PDF vs. ficha web vs. superposición, y catálogo/vista de adopción en escritorio y móvil.
+
+Ficha: contenedor aspect-ratio 810/1012.5 (página del PDF), capas en %, textos en cqw.
+Enlace directo a una ficha: index.html#zuko
+Para agregar una mascota: añádela en mascotas.json y en el bloque <script id="datos"> de index.html.
