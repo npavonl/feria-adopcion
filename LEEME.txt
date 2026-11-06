@@ -1,21 +1,33 @@
-Paraíso Huellitas – Catálogo de adopción
-=========================================
-index.html ............ Abre este archivo en el navegador (funciona sin servidor). Misma estructura que la
-                        web de AULLA: portada con capas, tarjetas con foto y contacto. Al tocar una tarjeta:
-                        · Tablet y escritorio (≥ 768 px): modal con la ficha + datos, WhatsApp, llamar, correo
-                          y Anterior/Siguiente.
-                        · Móvil (< 768 px): todas las fichas en un solo scroll, empezando por la elegida,
-                          con barra fija de contacto de la mascota visible.
-                        Esc, × o "atrás" del navegador cierran en ambos casos.
-mascotas.json ......... Datos reutilizables de las 11 mascotas (textos por renglón, sexo, tamaño, edad,
-                        y posición de la foto en % de la página) + datos de contacto.
-img/mascotas/*.webp ... Fotos recortadas del PDF con fondo transparente.
-img/logo.webp ......... Logo de la última página del PDF.
-img/capas/*.webp ...... Capas decorativas (carpeta "capas"), ubicadas como en Canva: mismo ancho que en
-                        AULLA y top:-6.57% (recorte A4 -> 4:5).
-fonts/ ................ Libre Baskerville Bold (OFL) con los glifos del PDF, para los títulos sin internet.
-verificacion/ ......... Capturas: Canva (Zuko) y PDF vs. ficha web vs. superposición, y catálogo/vista de adopción en escritorio y móvil.
+Feria de Adopción USFQ – Catálogos de adopción
+==============================================
+index.html ............ Portada con enlaces a cada fundación.
+comun/ ................ Lo que comparten TODAS las fundaciones (se cambia una sola vez):
+  css/styles.css ...... Estilos.
+  js/app.js ........... Lógica de la página y de la ficha.
+  fonts/ .............. Libre Baskerville Bold (OFL) recortada, para los títulos sin internet.
+  img/capas/*.webp .... Capas de fondo de la ficha (perros_* y gatos_*).
+paraiso-huellas/ ...... Paraíso Huellas (formato base).
+aulla/ ................ AULLA (perritos y gatitos; tiene filtro y fondo de gatos).
+animal-lovers/ ........ Animal Lovers EC.
 
-Ficha: contenedor aspect-ratio 810/1012.5 (página del PDF), capas en %, textos en cqw.
-Enlace directo a una ficha: index.html#zuko
-Para agregar una mascota: añádela en mascotas.json y en el bloque <script id="datos"> de index.html.
+Cada fundación tiene SOLO lo propio:
+  index.html ........... Página (lee estilos, lógica y capas desde ../comun/).
+  js/pets.js ........... Datos: ORG (nombre, teléfono, correo) y PETS (peluditos).
+  img/logo.webp ........ Logo de la fundación.
+  img/peluditos/*.webp . Fotos con fondo transparente (solo WebP).
+
+Ficha: formato 4:5 (810 × 1012,5), capas en %, textos en cqw.
+  · "Conoce a:" y el NOMBRE van en la misma posición en todas las fichas.
+  · El texto va en renglones fijos (lines); cada renglón se justifica y el último va a la izquierda.
+  · Si un texto es largo se reduce su tamaño con "fs" para que quepa en el mismo espacio (6 renglones de base).
+  · Salud: etiquetas solo con lo que dice la ficha original (health) y notas extra (notes).
+  · Los gatos (sp: "gato") usan automáticamente las capas gatos_*.
+
+Al tocar una tarjeta:
+  · Tablet y escritorio (≥ 768 px): ventana con la ficha + datos, WhatsApp, llamar, correo y Anterior/Siguiente.
+  · Móvil (< 768 px): todas las fichas en un solo scroll, empezando por la elegida, con barra fija de contacto.
+  Esc, × o "atrás" del navegador cierran en ambos casos.
+
+Enlace directo a una ficha: paraiso-huellas/index.html#zuko
+Nueva fundación: copia una carpeta de fundación, cambia index.html (nombre, contacto), js/pets.js, logo y fotos.
+Palabra usada en toda la web: "peluditos".

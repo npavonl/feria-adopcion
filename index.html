@@ -1,9 +1,35 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Feria de Adopción USFQ</title>
+    <meta name="description" content="Conoce a los peluditos de las fundaciones de la Feria de Adopción USFQ." />
+    <style>
+      :root { --ink: #0b0a09; --cream: #fbf8f4; --line: #e6e0d8; --muted: #5f5a54; --red: #e71d26; }
+      * { box-sizing: border-box; }
+      body { margin: 0; background: var(--cream); color: var(--ink);
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.5; }
+      main { width: min(720px, 100% - 32px); margin: 0 auto; padding: 48px 0; }
+      h1 { font-family: "Libre Baskerville", Georgia, serif; font-size: clamp(1.6rem, 5vw, 2.2rem); margin: 0 0 4px; }
+      p { margin: 0 0 28px; color: var(--muted); }
+      ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+      a { display: flex; align-items: center; gap: 16px; padding: 14px 18px; background: #fff;
+        border: 1px solid var(--line); border-radius: 14px; color: inherit; text-decoration: none; font-weight: 600; font-size: 1.1rem; }
+      a:hover, a:focus-visible { border-color: var(--red); }
+      a img { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; flex: none; }
+      a span { margin-left: auto; color: var(--red); }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <main>
+      <h1>Feria de Adopción USFQ</h1>
+      <p>Elige una fundación para conocer a sus peluditos.</p>
+      <ul>
+        <li><a href="paraiso-huellas/index.html"><img src="paraiso-huellas/img/logo.webp" alt="" />Paraíso Huellas<span>→</span></a></li>
+        <li><a href="aulla/index.html"><img src="aulla/img/logo.webp" alt="" />AULLA<span>→</span></a></li>
+        <li><a href="animal-lovers/index.html"><img src="animal-lovers/img/logo.webp" alt="" />Animal Lovers EC<span>→</span></a></li>
+      </ul>
+    </main>
+  </body>
 </html>
