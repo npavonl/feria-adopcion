@@ -31,24 +31,6 @@ const PETS = [
   ]
  },
  {
-  "id": "negrita",
-  "name": "Negrita",
-  "sp": "perro",
-  "label": "Perrita",
-  "age": "8 meses",
-  "lines": [
-   "¡Hola, me llamo Negrita! Soy una",
-   "perrita de 8 meses de edad. Soy muy",
-   "juguetona y cariñosa con mi familia.",
-   "Aún tengo mucho por aprender, pero",
-   "también tengo mucho amor por dar."
-  ],
-  "x": 31.51,
-  "y": 27.736,
-  "w": 36.277,
-  "h": 45.097
- },
- {
   "id": "pistacho",
   "name": "Pistacho",
   "sp": "perro",
@@ -103,27 +85,5 @@ const PETS = [
   "y": 28.403,
   "w": 59.003,
   "h": 43.989
- },
- {
-  "id": "candy",
-  "name": "Candy",
-  "sp": "perro",
-  "label": "Perrita",
-  "age": "9 años",
-  "lines": [
-   "¡Hola, me llamo Candy! Soy una",
-   "perrita de 9 años. Soy muy educada y",
-   "cariñosa con las personas. Me gusta",
-   "tener mi propio espacio por lo que",
-   "prefiero no pasar mucho tiempo con",
-   "otros peluditos."
-  ],
-  "x": 31.972,
-  "y": 27.736,
-  "w": 40.175,
-  "h": 45.601,
-  "notes": [
-   "Prefiere su propio espacio"
-  ]
  }
 ];
