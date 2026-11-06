@@ -12,6 +12,7 @@ animal-lovers/ ........ Animal Lovers EC.
 colitas-felices/ ...... Colitas Felices.
 ayuda-animal-carcelen/  Ayuda Animal Carcelén.
 vuelve-y-viduka/ ...... Vuelve & Viduka.
+pae/ .................. PAE – Protección Animal Ecuador.
 
 Cada fundación tiene SOLO lo propio:
   index.html ........... Página (lee estilos, lógica y capas desde ../comun/).
