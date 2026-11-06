@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Colitas Felices · Catálogo de adopción</title>
+    <meta
+      name="description"
+      content="Conoce a los perritos de Colitas Felices que esperan un hogar. Ven a la feria de adopción."
+    />
+    <link rel="icon" href="img/logo.webp" type="image/webp" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../comun/css/styles.css" />
+  </head>
+  <body>
+    <header class="top">
+      <div class="wrap">
+        <a class="brand" href="#inicio" aria-label="Colitas Felices, inicio">
+          <img src="img/logo.webp" alt="" width="44" height="44" />
+          <span><b>Colitas Felices</b><small>Diana Isabel</small></span>
+        </a>
+        <nav aria-label="Principal">
+          <a class="cta" href="#contacto">Contacto</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="inicio">
+      <section class="hero">
+        <img
+          class="deco d-left"
+          src="../comun/img/capas/perros_1_izquierda.webp"
+          alt=""
+        />
+        <img
+          class="deco d-right"
+          src="../comun/img/capas/perros_3_derecha.webp"
+          alt=""
+        />
+        <img
+          class="deco d-top"
+          src="../comun/img/capas/perros_2_centro_superior.webp"
+          alt=""
+        />
+        <div class="wrap">
+          <div class="inner">
+            <p class="kicker">Conoce a quienes</p>
+            <h1>esperan un hogar</h1>
+            <p class="lead">
+              Perritos rescatados, esterilizados, desparasitados y con sus vacunas al día. Cada uno tiene una historia y está listo para empezar la suya contigo.
+            </p>
+            <a class="btn" href="#peluditos">Ver peluditos</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="catalog" id="peluditos" aria-labelledby="t-masc">
+        <div class="wrap">
+          <div class="bar">
+            <h2 id="t-masc">Peluditos en adopción <span id="count"></span></h2>
+          </div>
+          <ul class="grid" id="grid"></ul>
+          <p class="empty" id="empty">
+            Estamos actualizando las fichas. Escríbenos para conocer los
+            peluditos disponibles.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <section class="contact" id="contacto">
+      <div class="wrap">
+        <img
+          src="img/logo.webp"
+          alt="Logo de Colitas Felices"
+          width="150"
+          height="150"
+          loading="lazy"
+        />
+        <div>
+          <h2>
+            Si estás interesado en alguno de nosotros, no dudes en contactarte
+          </h2>
+          <div class="row">
+            <a
+              class="btn wa"
+              id="wa-main"
+              href="#"
+              target="_blank"
+              rel="noopener"
+              ><svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M12.04 2a9.9 9.9 0 0 0-8.5 14.95L2 22l5.2-1.5A9.9 9.9 0 1 0 12.04 2Zm5.8 14.05c-.25.7-1.45 1.33-2 1.4-.5.07-1.13.1-1.8-.12-.42-.13-.95-.31-1.63-.6-2.87-1.24-4.74-4.13-4.88-4.32-.14-.19-1.17-1.56-1.17-2.97 0-1.42.74-2.12 1-2.4.27-.3.58-.37.78-.37h.56c.18 0 .43-.07.67.52.25.6.85 2.07.92 2.22.08.15.13.33.03.52-.1.2-.15.31-.3.48l-.45.52c-.15.15-.3.31-.13.6.18.3.78 1.28 1.67 2.07 1.14 1.02 2.1 1.33 2.4 1.48.3.15.47.13.65-.08.18-.2.75-.88.95-1.18.2-.3.4-.25.67-.15.27.1 1.73.82 2.03.97.3.15.5.22.57.35.08.12.08.72-.17 1.42Z"
+                /></svg
+              >WhatsApp</a
+            >
+            <a class="btn ghost" href="tel:+593983750246">Telf: 0983750246</a>
+            <a class="btn ghost" href="mailto:colitasfelices.diana@gmail.com"
+              >colitasfelices.diana@gmail.com</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>© Colitas Felices · Diana Isabel</footer>
+
+    <!-- Tablet y escritorio (≥ 768 px): modal de una ficha -->
+    <dialog id="dlgm" aria-label="Ficha del peludito">
+      <div class="sheet" id="sheet">
+        <div class="panel">
+          <button class="m-close" id="m-close" aria-label="Cerrar">×</button>
+          <div id="mficha"></div>
+          <aside class="info">
+            <p class="eyebrow" id="i-eyebrow">Perro en adopción</p>
+            <h3 id="i-name"></h3>
+            <div class="chips" id="i-chips"></div>
+            <p class="note" id="i-text"></p>
+            <p class="note">Escríbenos y coordinamos la adopción.</p>
+            <div class="actions">
+              <a
+                class="btn wa"
+                id="i-wa"
+                href="#"
+                target="_blank"
+                rel="noopener"
+                ><svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M12.04 2a9.9 9.9 0 0 0-8.5 14.95L2 22l5.2-1.5A9.9 9.9 0 1 0 12.04 2Zm5.8 14.05c-.25.7-1.45 1.33-2 1.4-.5.07-1.13.1-1.8-.12-.42-.13-.95-.31-1.63-.6-2.87-1.24-4.74-4.13-4.88-4.32-.14-.19-1.17-1.56-1.17-2.97 0-1.42.74-2.12 1-2.4.27-.3.58-.37.78-.37h.56c.18 0 .43-.07.67.52.25.6.85 2.07.92 2.22.08.15.13.33.03.52-.1.2-.15.31-.3.48l-.45.52c-.15.15-.3.31-.13.6.18.3.78 1.28 1.67 2.07 1.14 1.02 2.1 1.33 2.4 1.48.3.15.47.13.65-.08.18-.2.75-.88.95-1.18.2-.3.4-.25.67-.15.27.1 1.73.82 2.03.97.3.15.5.22.57.35.08.12.08.72-.17 1.42Z"
+                  /></svg
+                ><span>Quiero adoptar</span></a
+              >
+              <a class="btn dark" href="tel:+593983750246"
+                >Llamar · 0983750246</a
+              >
+              <a class="btn ghost" id="i-mail" href="#">Escribir por correo</a>
+            </div>
+            <div class="navrow">
+              <button class="btn ghost" id="prev">← Anterior</button>
+              <button class="btn ghost" id="next">Siguiente →</button>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </dialog>
+
+    <!-- Móvil (< 768 px): todas las fichas en un solo scroll -->
+    <dialog id="dlg" aria-label="Fichas de adopción">
+      <span class="counter" id="counter" aria-live="polite"></span>
+      <button class="close" id="close" aria-label="Volver al catálogo">
+        ×
+      </button>
+      <div class="feed" id="feed"></div>
+      <div class="adoptbar">
+        <p class="who" style="margin: 0">Adopta a <span id="b-name"></span></p>
+        <a class="btn wa" id="b-wa" href="#" target="_blank" rel="noopener"
+          ><svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M12.04 2a9.9 9.9 0 0 0-8.5 14.95L2 22l5.2-1.5A9.9 9.9 0 1 0 12.04 2Zm5.8 14.05c-.25.7-1.45 1.33-2 1.4-.5.07-1.13.1-1.8-.12-.42-.13-.95-.31-1.63-.6-2.87-1.24-4.74-4.13-4.88-4.32-.14-.19-1.17-1.56-1.17-2.97 0-1.42.74-2.12 1-2.4.27-.3.58-.37.78-.37h.56c.18 0 .43-.07.67.52.25.6.85 2.07.92 2.22.08.15.13.33.03.52-.1.2-.15.31-.3.48l-.45.52c-.15.15-.3.31-.13.6.18.3.78 1.28 1.67 2.07 1.14 1.02 2.1 1.33 2.4 1.48.3.15.47.13.65-.08.18-.2.75-.88.95-1.18.2-.3.4-.25.67-.15.27.1 1.73.82 2.03.97.3.15.5.22.57.35.08.12.08.72-.17 1.42Z"
+            /></svg
+          ><span>Quiero adoptar</span></a
+        >
+        <a class="btn ghost" href="tel:+593983750246"
+          ><span>Llamar<span class="hide-sm"> · 0983750246</span></span></a
+        >
+        <a class="btn ghost" id="b-mail" href="#">Correo</a>
+      </div>
+    </dialog>
+
+    <script src="js/pets.js"></script>
+    <script src="../comun/js/app.js"></script>
+  </body>
+</html>

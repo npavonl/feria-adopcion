@@ -9,6 +9,9 @@ comun/ ................ Lo que comparten TODAS las fundaciones (se cambia una so
 paraiso-huellas/ ...... Paraíso Huellas (formato base).
 aulla/ ................ AULLA (perritos y gatitos; tiene filtro y fondo de gatos).
 animal-lovers/ ........ Animal Lovers EC.
+colitas-felices/ ...... Colitas Felices.
+ayuda-animal-carcelen/  Ayuda Animal Carcelén.
+vuelve-y-viduka/ ...... Vuelve & Viduka.
 
 Cada fundación tiene SOLO lo propio:
   index.html ........... Página (lee estilos, lógica y capas desde ../comun/).
