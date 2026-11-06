@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.container-container {
+  display: flex;
+  justify-content: center;
+}
+
+.grid-container {
+  display: grid;
+  width: 990px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  background-color: beige;
+  padding: 10px;
+}
+
+.grid-container {
+  p {
+    background-color: lightblue;
+    width: 10vw;
+    height: 15vh;
+    padding: 10px;
+  }
+
+  :first-child {
+    background-color: lightgreen;
+    grid-column: 1 / 5;
+    width: 100%;
+  }
+}
