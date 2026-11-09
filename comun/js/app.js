@@ -2,6 +2,13 @@
    los datos (contacto y peluditos) viven en js/pets.js. */
 const {name: ORG_NAME, phone: PHONE, mail: MAIL} = ORG;
 PETS.forEach(p => { p.text = p.lines.join(' '); });
+/* Última ficha de cada fundación: invitación a apadrinar (igual en todas) */
+const APADRINA = {
+  id: 'apadrina', special: true, name: '¡Apadrínalo!', sp: 'perro', label: 'Apadrinamiento', age: '',
+  lines: ['Adoptar es un acto de amor y un', 'compromiso de vida; si no puedes', 'asumirlo pero quieres ayudar a un', 'peludito rescatado, ¡APADRÍNALO!']
+};
+APADRINA.text = APADRINA.lines.join(' ');
+const ALL = [...PETS, APADRINA];
 
 const female = p => /a$/i.test(p.label.split(' ')[0]);   // Perrita, Gatita, Cachorra…
 const healthChips = p => {
@@ -26,16 +33,26 @@ let filter = 'todos';
 let list = PETS;
 const visible = () => PETS.filter(p => filter === 'todos' || p.sp === filter);
 
-function renderGrid(){
-  list = visible();
-  grid.innerHTML = list.map(p => `
+function cardHTML(p){
+  if (p.special) return `
+    <li><button class="card apadrina" data-id="${p.id}" aria-label="Ver cómo apadrinar a un peludito">
+      <span class="tag">Apadrina</span>
+      <span class="ph"><img src="img/logo.webp" alt="Logo de ${ORG_NAME}" loading="lazy"></span>
+      <span class="meta"><span class="nm">${p.name}</span><span class="sub">Ayuda sin adoptar</span></span>
+    </button></li>`;
+  return `
     <li><button class="card" data-id="${p.id}" aria-label="Ver ficha de ${p.name}">
       <span class="tag">${species(p)}</span>
       <span class="ph"><img src="img/peluditos/${p.id}.webp" alt="${p.name}, ${p.label.toLowerCase()} de ${p.age}" loading="lazy"></span>
       <span class="meta"><span class="nm">${p.name}</span><span class="sub">${p.label} · ${p.age}</span></span>
-    </button></li>`).join('');
-  $('#count').textContent = list.length ? `(${list.length})` : '';
-  $('#empty').classList.toggle('show', !list.length);
+    </button></li>`;
+}
+function renderGrid(){
+  const pets = visible();
+  list = [...pets, APADRINA];
+  grid.innerHTML = list.map(cardHTML).join('');
+  $('#count').textContent = pets.length ? `(${pets.length})` : '';
+  $('#empty').classList.toggle('show', !pets.length);
   renderFeed();
 }
 document.querySelectorAll('.pill').forEach(b => b.addEventListener('click', () => {
@@ -46,6 +63,15 @@ document.querySelectorAll('.pill').forEach(b => b.addEventListener('click', () =
 
 /* Ficha = una sola pieza escalable: capas + foto + textos (%, cqw) */
 function fichaHTML(p){
+  if (p.special) return `<div class="ficha apadrina" role="img" aria-label="${p.text}">
+    <img class="l" src="../comun/img/capas/perros_1_izquierda.webp" alt="">
+    <img class="c" src="../comun/img/capas/perros_2_centro_superior.webp" alt="">
+    <img class="r" src="../comun/img/capas/perros_3_derecha.webp" alt="">
+    <img class="logo-big" src="img/logo.webp" alt="" decoding="async">
+    <p class="hello">¿No puedes adoptar?</p>
+    <h2 class="pname">${p.name}</h2>
+    <p class="story">${p.lines.map(l => `<span>${l}</span>`).join('')}</p>
+  </div>`;
   const fs = p.fs ? ` style="font-size:${p.fs}cqw"` : '';
   return `<div class="ficha" role="img" aria-label="Ficha de adopción de ${p.name}: ${p.text}">
     <img class="l" src="../comun/img/capas/${layers(p)}_1_izquierda.webp" alt="">
@@ -71,14 +97,28 @@ function fitNames(root = feed){
     if (w > max) n.style.fontSize = (parseFloat(getComputedStyle(n).fontSize) * max / w) + 'px';
   });
 }
-const mailTo = p => `mailto:${MAIL}?subject=${encodeURIComponent('Adopción de ' + p.name)}&body=${encodeURIComponent(`Hola ${ORG_NAME}, me interesa adoptar a ${p.name}.`)}`;
-const waPet = p => wa(`Hola ${ORG_NAME}, me interesa adoptar a ${p.name}. ¿Podrían darme más información?`);
+const mailTo = p => p.special
+  ? `mailto:${MAIL}?subject=${encodeURIComponent('Apadrinamiento')}&body=${encodeURIComponent(`Hola ${ORG_NAME}, me gustaría apadrinar a un peludito. ¿Cómo puedo ayudar?`)}`
+  : `mailto:${MAIL}?subject=${encodeURIComponent('Adopción de ' + p.name)}&body=${encodeURIComponent(`Hola ${ORG_NAME}, me interesa adoptar a ${p.name}.`)}`;
+const waPet = p => p.special
+  ? wa(`Hola ${ORG_NAME}, me gustaría apadrinar a un peludito. ¿Cómo puedo ayudar?`)
+  : wa(`Hola ${ORG_NAME}, me interesa adoptar a ${p.name}. ¿Podrían darme más información?`);
+// Textos de los botones y de la barra según sea adopción o apadrinamiento
+const NOTE = document.querySelector('#dlgm .info .note:not(#i-text)');
+function setMode(p){
+  const ap = !!p.special;
+  document.querySelectorAll('#i-wa span, #b-wa span').forEach(s => s.textContent = ap ? 'Quiero apadrinar' : 'Quiero adoptar');
+  const who = document.querySelector('.adoptbar .who');
+  who.firstChild.textContent = ap ? 'Apadrina a ' : 'Adopta a ';
+  if (NOTE) NOTE.textContent = ap ? 'Escríbenos y te contamos cómo apadrinar.' : 'Escríbenos y coordinamos la adopción.';
+}
 
 let current = null;
 function setCurrent(id){
   if (id === current) return; current = id;
   const i = list.findIndex(p => p.id === id), p = list[i];
-  $('#b-name').textContent = p.name;
+  setMode(p);
+  $('#b-name').textContent = p.special ? 'un peludito' : p.name;
   $('#counter').textContent = `${i + 1} / ${list.length}`;
   $('#b-wa').href = waPet(p);
   $('#b-mail').href = mailTo(p);
@@ -104,9 +144,11 @@ let mIndex = 0;
 function openModal(id, push = true){
   mIndex = list.findIndex(p => p.id === id); const p = list[mIndex];
   mficha.innerHTML = fichaHTML(p).replace('loading="lazy" ', '');
-  $('#i-eyebrow').textContent = `${species(p)} en adopción`;
+  setMode(p);
+  $('#i-eyebrow').textContent = p.special ? 'Apadrinamiento' : `${species(p)} en adopción`;
   $('#i-name').textContent = p.name;
-  $('#i-chips').innerHTML = `<span class="chip">${p.label}</span><span class="chip">${p.age}</span>${healthChips(p)}`;
+  $('#i-chips').innerHTML = p.special ? '<span class="chip">Ayuda sin adoptar</span>'
+    : `<span class="chip">${p.label}</span><span class="chip">${p.age}</span>${healthChips(p)}`;
   $('#i-text').textContent = p.text;
   $('#i-wa').href = waPet(p); $('#i-mail').href = mailTo(p);
   if (!dlgm.open){ dlgm.showModal(); document.body.style.overflow = 'hidden'; if (push) history.pushState({adopt:true}, '', '#' + id); }
@@ -149,7 +191,7 @@ dlg.addEventListener('close', () => {
 // Atrás/adelante: la URL manda (si tiene #peludito se abre, si no se cierra)
 addEventListener('popstate', () => {
   const id = location.hash.slice(1);
-  if (PETS.some(p => p.id === id)){ if (isMobile()) openPet(id, false); else openModal(id, false); }
+  if (ALL.some(p => p.id === id)){ if (isMobile()) openPet(id, false); else openModal(id, false); }
   else closeAll();
 });
 // Flechas arriba/abajo: peludito anterior / siguiente
@@ -166,4 +208,4 @@ if (document.fonts) document.fonts.ready.then(() => dlg.open && fitNames());
 renderGrid();
 // Enlace compartido (#zuko): se crea primero una entrada "catálogo" para que cerrar/atrás vuelva aquí
 const h = location.hash.slice(1);
-if (PETS.some(p => p.id === h)){ history.replaceState(null, '', location.pathname + location.search + '#peluditos'); openPet(h, true); }
+if (ALL.some(p => p.id === h)){ history.replaceState(null, '', location.pathname + location.search + '#peluditos'); openPet(h, true); }

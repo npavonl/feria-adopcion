@@ -32,6 +32,9 @@ Al tocar una tarjeta:
   · Móvil (< 768 px): todas las fichas en un solo scroll, empezando por la elegida, con barra fija de contacto.
   Esc, × o "atrás" del navegador cierran en ambos casos.
 
+Última ficha de cada fundación: "¡Apadrínalo!" (comun/js/app.js, objeto APADRINA). Muestra el logo de la
+  fundación y los botones dicen "Quiero apadrinar". Enlace directo: <fundación>/index.html#apadrina
+
 Enlace directo a una ficha: paraiso-huellas/index.html#zuko
 Nueva fundación: copia una carpeta de fundación, cambia index.html (nombre, contacto), js/pets.js, logo y fotos.
 Palabra usada en toda la web: "peluditos".

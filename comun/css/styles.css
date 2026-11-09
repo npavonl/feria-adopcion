@@ -523,6 +523,38 @@ a {
 .ficha .pname.full {
   font-family: var(--serif);
 }
+/* Ficha final "Apadrínalo": logo de la fundación en el lugar de la foto */
+.ficha .logo-big {
+  z-index: 1;
+  left: 30%;
+  top: 34%;
+  width: 40%;
+  height: 32%;
+  object-fit: contain;
+}
+/* Títulos un poco más abajo y texto un poco más arriba que en las fichas de peluditos */
+.ficha.apadrina .hello {
+  top: 18%;
+}
+.ficha.apadrina .pname {
+  top: 24.3%;
+}
+.ficha.apadrina .story {
+  top: 70%;
+}
+.card.apadrina {
+  border-color: var(--red);
+}
+.card.apadrina .tag {
+  background: var(--red);
+}
+.card.apadrina .ph img {
+  left: 18%;
+  top: 22%;
+  width: 64%;
+  height: 56%;
+  filter: none;
+}
 /* Cada renglón respeta el corte del original y se justifica igual (el último a la izquierda) */
 .ficha .story span {
   display: block;
